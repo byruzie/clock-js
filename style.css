@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Inter Tight", system-ui;
+}
+
+body {
+    background-color: #f1f5f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.container{
+    height: 500px; 
+    width: 1000px;
+    color: #f8fafc;
+}
+
+.container, .modal.active {
+    position: absolute;
+}
+
+.header{
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #292524;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.menu{
+    font-size: 70%;
+    width: 100%;
+}
+
+.btn_add{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    color: #565555;
+    width: 100%;
+}
+
+.btn_add.active{
+    color: white;
+    cursor: pointer;
+    width: 100%;
+}
+
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #3D3D3D;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.link{
+    border-right: 1px solid #3D3D3D;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.link.active{
+    background-color: #3D3D3D;
+}
+
+.content_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #1c1917;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.content {
+    display: none;
+}
+
+.content.active{
+    display: flex;
+}
+
+/* Relógio */
+
+.clock_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.date, .location{
+    font-size: 14px;
+    font-weight: 200;
+}
+
+.location {
+    margin-top: 3px;
+}
+
+/* Time Display */
+
+.clock span, .stopwatch span, .timer span{
+    font-weight: 300;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+}
+
+.time {
+    font-weight: 300;
+    width: 75px;
+    font-size: 60px;
+}
+
+.dot, .comma {
+    font-size: 54px;
+    top: -3px;
+}
+
+/* Alarm */
+
+.alarms {
+    display: none;
+}
+
+.alarms.active{
+    display: grid;
+    row-gap: 0;
+    grid-template-columns: repeat(5, 175px);
+    grid-template-rows: repeat(3, 125px);
+    width: 850px;
+    height: 350px;
+}
+
+.alarms .alarm {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 100px;
+    border: 1px solid #565555;
+    background-color: #292524;
+    border-radius: 10px;
+}
+
+.fa-circle-xmark {
+    margin-top: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.alarm_display {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    margin-top: 13px;
+    margin-bottom: 5px;
+}
+
+.toggle {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 6px;
+}
+
+.toggle input {
+    position: absolute;
+    width: 30px;
+    height: 25px;
+    opacity: 0;
+    z-index: 1;
+}
+
+.on {
+    display: none;
+}
+
+.off {
+    display: flex;
+    position: absolute;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.toggle .checkbox:checked ~ .on {
+    display: flex;
+    font-size: 25px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+}
+
+.modal.active {
+    margin-top: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2925245f;
+    border-radius: 10px;
+    width: 1000px;
+    height: 547px;
+    z-index: 99;
+}
+
+.content_modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #292524;
+    width: 250px;
+    height: 250px;
+    border: 1px solid #565555;
+    border-radius: 5px;
+}
+
+.input_alarm {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #565555;
+    border-radius: 5px;
+    background-color: #3D3D3D;
+    width: 125px;
+    height: 55px;
+}
+
+.alarm_dot {
+    font-size: 38px;
+    font-weight: 300;
+    color: white;
+}
+
+.set_time{
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    color: white;
+    width: 55px;
+    font-size: 40px;
+    font-weight: 300;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.btn_alarm {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.alarm-default {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.alarm-default .fa-clock {
+    font-size: 40px;
+}
+
+.alarm-default h4 {
+    margin-top: 10px;
+    font-weight: 300;
+}
+
+/* Cronômetro */
+
+.stopwatch_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.stopwatch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Timer */
+.timer_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer {
+    display: none;
+}
+
+.timer.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input_timer.inactive{
+    display: none;
+}
+
+.input_timer {
+    display: flex;
+    border: 1px solid #565555;
+    border-radius: 5px;
+    background-color: #3D3D3D;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input_time{
+    background-color: transparent;
+    border: none;
+    color: white;
+    width: 70px;
+}
+
+.timer_dot, .input_time {
+    font-size: 60px;
+    font-weight: 300;
+}
+
+.timer_dot{
+    height: 84px;
+    width: 15px;
+}
+
+/* Botões */
+
+.btn {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.btn_start, .btn_stop, .btn_reset, .btn_cancel, .btn_save {
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 300;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.btn_start, .btn_save {
+    background-color: #65a30d;
+    color: white;
+}
+
+.btn_stop {
+    background-color: #eab308;
+    color: white;
+}
+
+.btn_reset, .btn_cancel {
+    background-color: #78716c;
+    color: white;
+}

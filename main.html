@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="menu">
+                <i class="fa-solid fa-circle" style="color: #dc2626"></i>
+                <i class="fa-solid fa-circle" style="color: #fbbf24"></i>
+                <i class="fa-solid fa-circle" style="color: #65a30d"></i>
+            </div>
+            <div class="nav">
+                <nav class="link active">Relógio</nav>
+                <nav class="nav-a link">Alarme</nav>
+                <nav class="link">Cronômetro</nav>
+                <nav class="link">Timer</nav>
+            </div>
+            <div class="btn_add">
+                <i class="fa-solid fa-plus" id="add"></i>
+            </div>
+        </div>
+        <div class="content_box">
+            <div class="content active">
+                <div class="clock_box">
+                    <div class="clock">
+                        <span class="time" id="hour-clock">00</span>
+                        <span class="dot">:</span>
+                        <span class="time" id="minute-clock">00</span>
+                        <span class="dot">:</span>
+                        <span class="time" id="second-clock">00</span>
+                    </div>
+                    <h3 class="date" id="date">Segunda, 1 de Janeiro de 2000</h3>
+                    <h3 class="location">Brasil, Brasília</h3>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="alarms"></div>
+                <div class="no-alarms"></div>
+            </div>
+
+            <div class="content">
+                <div class="stopwatch_box">
+                    <div class="stopwatch">
+                        <span class="time" id="minute-sw">00</span>
+                        <span class="dot">:</span>
+                        <span class="time" id="second-sw">00</span>
+                        <span class="comma">,</span>
+                        <span class="time" id="millisecond-sw">00</span>
+                    </div>
+                    <div class="btn">
+                        <button class="btn_start" onclick="startClock()">Começar</button>
+                        <button class="btn_stop" onclick="stopClock()">Pausar</button>
+                        <button class="btn_reset" onclick="resetClock()">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="timer_box">
+                    <div class="timer" id="display-timer">
+                        <span class="time" id="hour-tm">00</span>
+                        <span class="dot">:</span>
+                        <span class="time" id="minute-tm">00</span>
+                        <span class="dot">:</span>
+                        <span class="time" id="second-tm">00</span>
+                    </div>
+                    <div class="input_timer" id="input-timer">
+                        <input class="input_time" type="number" id="hour-timer" value="00" max="99" min="0">
+                        <span class="timer_dot" for="minutes">:</span>
+                        <input class="input_time" type="number" id="minute-timer" value="00" max="59" min="0">
+                        <span class="timer_dot" for="seconds">:</span>
+                        <input class="input_time" type="number" id="second-timer" value="00" max="59" min="0">
+                    </div>
+                    <div class="btn">
+                        <button class="btn_start" id="btn-start">Começar</button>
+                        <button class="btn_stop" id="btn-stop">Pausar</button>
+                        <button class="btn_reset" id="btn-reset">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="add-alarm-modal">
+        <div class="content_modal">
+            <div class="input_alarm">
+                <input class="set_time" type="number" id="hour-alarm" value="00" max="23" min="0">
+                <span class="alarm_dot">:</span>
+                <input class="set_time" type="number" id="minute-alarm" value="00" max="59" min="0">
+            </div>
+            <div class="btn_alarm">
+                <button class="btn_cancel" id="btn-cancel">Cancelar</button>
+                <button class="btn_save" id="btn-save">Salvar</button>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
