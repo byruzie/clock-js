@@ -1,5 +1,5 @@
 # Relógio em Javascript 
-Link: https://byruzie.github.io/clock-js/
+Link: 
 
 ## Descrição:
 Aplicação web para desktop com as funcionalidade de relógio digital, timer, alarme e cronômetro usando HTML, CSS e JavaScript.
